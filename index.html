@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>tinyHeart</title>
+	<style type="text/css">
+    body{padding-top: 10px;}
+    .all_bg{width: 800px;height: 600px;margin: 0 auto;position: relative;}
+    #allcanvas{position: relative;width: 800px;height: 600px;margin: 0;}
+    #canvas1{position: absolute;bottom: 0;left: 0;z-index: 1;}
+    #canvas2{position: absolute;bottom: 0;left: 0;z-index: 0;}
+    .fnc{position: absolute;top:5px;right:0;color: #fff;z-index: 9;text-align: center;margin-right: 4px;font-weight: bold;}
+    #btn{cursor: pointer;}
+    #help{cursor: pointer;margin-top: 3px;}
+    #tip{width:650px;height: 250px;position: absolute;border:3px solid #eee;top:50%;left:50%;z-index: 99;background-color: #fff;border-radius: 20px;margin-left: -325px;margin-top: -200px;display: none;}
+    #closeTip{margin-left: 620px;font-size: 20px;color: #888;cursor: pointer;}
+    #tip p{color: #333;font-size: 18px;margin-left: 50px;}
+	</style>
+</head>
+<body>
+  <div class='all_bg'>
+    <div id='allcanvas'>
+      <canvas id='canvas1' width='800' height='600'></canvas>
+      <canvas id='canvas2' width='800' height='600'></canvas>
+    </div>
+    <div class='fnc'>
+      <div id='btn'>New Game</div>
+      <div id='help'>Help</div>
+    </div>
+    
+    <div id='tip'>
+      <span id='closeTip'>X</span>
+      <div><p>移动鼠标来控制大鱼</p><p>控制大鱼将吃到的果实喂给小鱼</p><p>喂给小鱼橙色果实获得奖励分</p><p>请躲开有毒的蓝色果实</p><p>小鱼生命值降为零或者将有毒的蓝色果实喂给小鱼则游戏结束</p></div>
+    </div>
+  </div>
+  <script type="text/javascript" src='js/main.js'></script>
+  <script type="text/javascript" src='js/commonFunctions.js'></script>
+  <script type="text/javascript" src='js/background.js'></script>
+  <script type="text/javascript" src='js/ane.js'></script>
+  <script type="text/javascript" src='js/fruit.js'></script>
+  <script type="text/javascript" src='js/mom.js'></script>
+  <script type="text/javascript" src='js/collision.js'></script>
+  <script type="text/javascript" src='js/baby.js'></script>
+  <script type="text/javascript" src='js/data.js'></script>
+  <script type="text/javascript" src='js/wave.js'></script>
+  <script type="text/javascript" src='js/halo.js'></script>
+  <script type="text/javascript" src='js/dust.js'></script>
+  <script type="text/javascript">
+    document.getElementById('btn').onclick=function(){
+      init();
+    }
+    var tip=document.getElementById('tip');
+    document.getElementById('help').onclick=function(){
+      tip.style.display='block';
+    };
+    document.getElementById('closeTip').onclick=function(){
+      tip.style.display='none';
+    }
+    
+  </script>
+
+</body>
+</html>
